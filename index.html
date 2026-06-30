@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benjamin Catteau — Design de marque</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF7;
+    --ink:#121212;
+    --mute:#7A7A75;
+    --line:rgba(18,18,18,.14);
+    --accent:#FF4B2E;
+    --sans:'Space Grotesk', sans-serif;
+    --serif:'Fraunces', serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);overflow-x:hidden;}
+  ::selection{background:var(--ink);color:var(--paper);}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:1280px;margin:0 auto;padding:0 2.5rem;}
+
+  /* ---- NAV ---- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(250,250,247,.85);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 2.5rem;}
+  .logo{font-weight:700;font-size:1rem;letter-spacing:-0.01em;text-decoration:none;}
+  .nav-right{display:flex;align-items:center;gap:2rem;font-size:.85rem;}
+  .nav-right a{text-decoration:none;position:relative;}
+  .nav-right a:after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:1px;background:var(--ink);transition:width .25s ease;}
+  .nav-right a:hover:after{width:100%;}
+  #langToggle{font-size:.78rem;font-weight:600;border:1px solid var(--ink);background:none;padding:.3rem .65rem;border-radius:999px;cursor:pointer;font-family:var(--sans);color:var(--ink);}
+
+  section{padding:9rem 0 6rem;}
+  #hero{padding-top:11rem;padding-bottom:5rem;}
+
+  /* ---- HERO ---- */
+  .greet{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.7rem);color:var(--mute);height:2.2em;overflow:hidden;position:relative;}
+  .greet span{display:block;}
+  .hero-name{
+    font-size:clamp(2.8rem,8vw,6.2rem);
+    font-weight:700;letter-spacing:-0.02em;line-height:1.0;
+    margin-top:.5rem;
+  }
+  .hero-name em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--accent);}
+  .roles{
+    margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.6rem;
+  }
+  .roles span{
+    font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;
+    border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;color:var(--mute);
+  }
+  .hero-statement{
+    margin-top:3rem;max-width:46ch;
+    font-size:clamp(1.1rem,2vw,1.5rem);line-height:1.5;font-weight:500;
+  }
+
+  /* ---- SKILLS ---- */
+  .skills-title{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mute);margin-bottom:1.5rem;}
+  .skills-list{
+    display:grid;grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    border-top:1px solid var(--line);
+  }
+  .skills-list div{
+    padding:1.1rem 0;border-bottom:1px solid var(--line);
+    font-size:1.05rem;font-weight:500;
+  }
+
+  /* ---- CLIENT TYPE ---- */
+  #for-who{padding-top:3rem;}
+  .for-who-text{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:clamp(1.4rem,3.4vw,2.6rem);line-height:1.35;max-width:24ch;
+  }
+  .for-who-text .rotate{color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:.05em;}
+
+  /* ---- PROJECTS ---- */
+  #work{border-top:1px solid var(--line);}
+  .work-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.5rem;}
+  .work-head h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mute);}
+  .work-count{font-size:.8rem;color:var(--mute);}
+
+  .project-list{border-top:1px solid var(--line);}
+  .project-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:1.6rem 0;border-bottom:1px solid var(--line);
+    cursor:pointer;position:relative;
+    transition:padding-left .25s ease;
+  }
+  .project-row:hover{padding-left:.5rem;}
+  .project-row .pn{
+    font-size:.8rem;color:var(--mute);width:2.5rem;flex-shrink:0;
+  }
+  .project-row .pname{
+    font-size:clamp(1.3rem,3vw,2.1rem);font-weight:600;letter-spacing:-0.01em;flex:1;
+    transition:color .2s ease;
+  }
+  .project-row:hover .pname{color:var(--accent);}
+  .project-row .ptags{font-size:.8rem;color:var(--mute);max-width:28ch;text-align:right;flex-shrink:0;display:none;}
+  @media(min-width:760px){.project-row .ptags{display:block;}}
+  .project-row .pdate{font-size:.8rem;color:var(--mute);width:5rem;text-align:right;flex-shrink:0;}
+
+  .preview-panel{
+    position:fixed;top:50%;right:2.5rem;transform:translateY(-50%);
+    width:300px;height:380px;border-radius:6px;overflow:hidden;
+    pointer-events:none;opacity:0;transition:opacity .25s ease;
+    z-index:50;box-shadow:0 30px 60px rgba(0,0,0,.18);background:#111;
+  }
+  .preview-panel.visible{opacity:1;}
+  .preview-panel img{width:100%;height:100%;object-fit:cover;}
+  @media(max-width:1100px){.preview-panel{display:none;}}
+
+  /* ---- PROJECT DETAIL ---- */
+  .project-detail{display:none;border-top:1px solid var(--line);padding-top:2.5rem;}
+  .project-detail.open{display:block;}
+  .project-detail .gallery{
+    display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:9vw;gap:.5rem;margin-top:1.5rem;
+  }
+  .project-detail .gallery img{width:100%;height:100%;object-fit:cover;border-radius:4px;}
+  .pd-g1{grid-column:span 2;grid-row:span 3;}
+  .pd-g2{grid-column:span 4;grid-row:span 2;}
+  .pd-g3{grid-column:span 2;grid-row:span 2;}
+  .pd-g4{grid-column:span 2;grid-row:span 1;}
+  .pd-g5{grid-column:span 2;grid-row:span 2;}
+  .pd-g6{grid-column:span 2;grid-row:span 2;}
+  .pd-g7{grid-column:span 2;grid-row:span 2;}
+  @media(max-width:760px){
+    .project-detail .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:38vw;}
+    .pd-g1,.pd-g2,.pd-g3,.pd-g4,.pd-g5,.pd-g6,.pd-g7{grid-column:span 1;grid-row:span 1;}
+    .pd-g1{grid-row:span 2;}
+    .pd-g2{grid-column:span 2;}
+  }
+  .pd-close{font-size:.8rem;color:var(--mute);cursor:pointer;margin-bottom:1rem;display:inline-block;}
+  .pd-close:hover{color:var(--accent);}
+  .pd-title{font-size:clamp(2rem,5vw,3.4rem);font-weight:700;letter-spacing:-0.01em;}
+  .pd-meta{margin-top:.6rem;font-size:.95rem;color:var(--mute);}
+
+  /* ---- CONTACT ---- */
+  #contact{border-top:1px solid var(--line);}
+  .contact-title{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:clamp(2rem,6vw,4.2rem);line-height:1.2;max-width:18ch;
+  }
+  .contact-links{margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;}
+  .contact-links a{
+    font-size:1rem;font-weight:600;text-decoration:none;
+    border-bottom:1px solid var(--line);transition:border-color .2s ease,color .2s ease;
+  }
+  .contact-links a:hover{border-color:var(--accent);color:var(--accent);}
+  footer{padding:2.5rem 0 3rem;display:flex;justify-content:space-between;font-size:.78rem;color:var(--mute);}
+
+  html[lang="en"] [data-i18n-fr]{display:none !important;}
+  html[lang="fr"] [data-i18n-en]{display:none !important;}
+
+  @media (max-width:640px){
+    .wrap{padding:0 1.2rem;}
+    nav{padding:1.1rem 1.2rem;}
+    section{padding:7rem 0 4rem;}
+    .project-row .ptags{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#hero" class="logo">Benjamin Catteau</a>
+    <div class="nav-right">
+      <a href="#work" data-i18n-fr>Réalisations</a><a href="#work" data-i18n-en>Work</a>
+      <a href="#contact" data-i18n-fr>Contact</a><a href="#contact" data-i18n-en>Contact</a>
+      <button id="langToggle" onclick="toggleLang()">EN</button>
+    </div>
+  </nav>
+</header>
+
+<section id="hero">
+  <div class="wrap">
+    <div class="greet">
+      <span data-i18n-fr>Enchanté,</span><span data-i18n-en>Hello,</span>
+    </div>
+    <h1 class="hero-name">Benjamin <em>Catteau</em></h1>
+    <div class="roles">
+      <span data-i18n-fr>Design de marque</span><span data-i18n-en>Brand design</span>
+      <span data-i18n-fr>Identité visuelle</span><span data-i18n-en>Visual identity</span>
+      <span data-i18n-fr>Logotype</span><span data-i18n-en>Logo design</span>
+      <span data-i18n-fr>Direction artistique</span><span data-i18n-en>Art direction</span>
+    </div>
+    <p class="hero-statement" data-i18n-fr>Je construis des identités de marque aux formes simples et harmonieuses, toujours porteuses de sens.</p>
+    <p class="hero-statement" data-i18n-en>I build brand identities with simple, harmonious forms that always carry meaning.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="skills-title" data-i18n-fr>Savoir-faire</div>
+    <div class="skills-title" data-i18n-en>Expertise</div>
+    <div class="skills-list">
+      <div data-i18n-fr>Conçoit des logos</div><div data-i18n-en>Designs logos</div>
+      <div data-i18n-fr>Imagine des identités visuelles</div><div data-i18n-en>Builds visual identities</div>
+      <div data-i18n-fr>Maîtrise la mise en page</div><div data-i18n-en>Masters layout & print</div>
+      <div data-i18n-fr>Crée des chartes graphiques</div><div data-i18n-en>Creates brand guidelines</div>
+      <div data-i18n-fr>Réalise des supports événementiels</div><div data-i18n-en>Designs event materials</div>
+      <div data-i18n-fr>Communique sur les réseaux</div><div data-i18n-en>Designs social content</div>
+    </div>
+  </div>
+</section>
+
+<section id="for-who">
+  <div class="wrap">
+    <p class="for-who-text">
+      <span data-i18n-fr>Vous êtes un festival culturel, une marque sportive, une entreprise gourmande, un studio créatif qui veut <span class="rotate">une identité forte</span>.</span>
+      <span data-i18n-en>You're a cultural festival, a sports brand, a food company, a creative studio that wants <span class="rotate">a strong identity</span>.</span>
+    </p>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="work-head">
+      <h2 data-i18n-fr>Réalisations</h2>
+      <h2 data-i18n-en>Selected work</h2>
+      <span class="work-count">01 — 05</span>
+    </div>
+
+    <div class="project-list" id="projectList">
+
+      <div class="project-row" data-img="images/nexon/Affiche_A2_Nexon_V01.png" data-target="detail-nexon">
+        <span class="pn">01</span>
+        <span class="pname">Nexon Festival</span>
+        <span class="ptags" data-i18n-fr>Festival numérique — Identité, signalétique, édition</span>
+        <span class="ptags" data-i18n-en>Digital festival — Identity, signage, print</span>
+        <span class="pdate">2026</span>
+      </div>
+
+      <div class="project-row" data-img="" data-target="">
+        <span class="pn">02</span>
+        <span class="pname">Volt Athletics</span>
+        <span class="ptags" data-i18n-fr>Marque sportive — Logotype, charte graphique</span>
+        <span class="ptags" data-i18n-en>Sports brand — Wordmark, guidelines</span>
+        <span class="pdate">2025</span>
+      </div>
+
+      <div class="project-row" data-img="" data-target="">
+        <span class="pn">03</span>
+        <span class="pname">Meridian Botanicals</span>
+        <span class="ptags" data-i18n-fr>Cosmétique — Système de logo, étiquettes</span>
+        <span class="ptags" data-i18n-en>Cosmetics — Logo system, labels</span>
+        <span class="pdate">2025</span>
+      </div>
+
+      <div class="project-row" data-img="" data-target="">
+        <span class="pn">04</span>
+        <span class="pname">Pilot Light Studio</span>
+        <span class="ptags" data-i18n-fr>Studio créatif — Logo, papeterie</span>
+        <span class="ptags" data-i18n-en>Creative studio — Logo, stationery</span>
+        <span class="pdate">2024</span>
+      </div>
+
+      <div class="project-row" data-img="" data-target="">
+        <span class="pn">05</span>
+        <span class="pname">Rivet & Rye</span>
+        <span class="ptags" data-i18n-fr>Restaurant — Logo, carte, signalétique</span>
+        <span class="ptags" data-i18n-en>Restaurant — Logo, menu, signage</span>
+        <span class="pdate">2024</span>
+      </div>
+
+    </div>
+
+    <!-- Nexon detail -->
+    <div class="project-detail" id="detail-nexon">
+      <span class="pd-close" onclick="closeDetail('detail-nexon')" data-i18n-fr>← Retour</span>
+      <span class="pd-close" onclick="closeDetail('detail-nexon')" data-i18n-en>← Back</span>
+      <h3 class="pd-title">Nexon Festival</h3>
+      <p class="pd-meta" data-i18n-fr>Identité visuelle complète pour un festival des cultures connectées — logo, signalétique, badges, pass, affiche, programme et déclinaisons réseaux sociaux.</p>
+      <p class="pd-meta" data-i18n-en>Full visual identity for a connected-culture festival — logo, signage, badges, passes, poster, programme and social media assets.</p>
+      <div class="gallery">
+        <img class="pd-g1" src="images/nexon/Affiche_A2_Nexon_V01.png" alt="Nexon poster">
+        <img class="pd-g2" src="images/nexon/Banniere_FB_Nexon.png" alt="Nexon banner">
+        <img class="pd-g3" src="images/nexon/Badge_Nexon.png" alt="Nexon badge">
+        <img class="pd-g4" src="images/nexon/Pass2j_Nexon.png" alt="Nexon pass">
+        <img class="pd-g5" src="images/nexon/Programme_Nexon.png" alt="Nexon programme">
+        <img class="pd-g6" src="images/nexon/RS_Insta_Nexon2.png" alt="Nexon social">
+        <img class="pd-g7" src="images/nexon/RS_Insta_Nexon5.png" alt="Nexon social">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="preview-panel" id="previewPanel"><img id="previewImg" src="" alt=""></div>
+
+<section id="contact">
+  <div class="wrap">
+    <p class="contact-title" data-i18n-fr>Construisons votre prochaine identité de marque.</p>
+    <p class="contact-title" data-i18n-en>Let's build your next brand identity.</p>
+    <div class="contact-links">
+      <a href="mailto:hello@benjamincatteau.com">hello@benjamincatteau.com</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <footer>
+      <span data-i18n-fr>Benjamin Catteau — Designer de marque</span>
+      <span data-i18n-en>Benjamin Catteau — Brand Designer</span>
+      <span data-i18n-fr>Basé à Paris, FR</span>
+      <span data-i18n-en>Based in Paris, FR</span>
+    </footer>
+  </div>
+</section>
+
+<script>
+  function toggleLang(){
+    const html = document.documentElement;
+    const next = html.lang === 'fr' ? 'en' : 'fr';
+    html.lang = next;
+    document.getElementById('langToggle').textContent = next === 'fr' ? 'EN' : 'FR';
+  }
+
+  // hover preview panel
+  const panel = document.getElementById('previewPanel');
+  const previewImg = document.getElementById('previewImg');
+  document.querySelectorAll('.project-row').forEach(row=>{
+    const imgSrc = row.getAttribute('data-img');
+    row.addEventListener('mouseenter', ()=>{
+      if(imgSrc){
+        previewImg.src = imgSrc;
+        panel.classList.add('visible');
+      }
+    });
+    row.addEventListener('mouseleave', ()=>{
+      panel.classList.remove('visible');
+    });
+    row.addEventListener('click', ()=>{
+      const target = row.getAttribute('data-target');
+      if(target){
+        document.getElementById('projectList').style.display='none';
+        document.getElementById(target).classList.add('open');
+        panel.classList.remove('visible');
+      }
+    });
+  });
+
+  function closeDetail(id){
+    document.getElementById(id).classList.remove('open');
+    document.getElementById('projectList').style.display='';
+  }
+</script>
+
+</body>
+</html>
