@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&amp;family=Archivo:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  ::selection { background: #E11157; color: #fff; }
+  @keyframes revealIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+  /* Scroll-driven reveal. Resting/fallback state is fully visible (opacity 1),
+     so content can never get stuck hidden if the timeline is unsupported. */
+  [data-reveal] { animation: revealIn both linear; animation-timeline: view(); animation-range: entry 2% cover 20%; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } [data-reveal]{ animation: none; } }
+</style>
+</helmet>
+<main style="font-family:'Archivo',system-ui,sans-serif; background:#F7F6F3; color:#141210; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:20px clamp(20px,5vw,64px); background:rgba(247,246,243,0.82); backdrop-filter:blur(10px); border-bottom:1px solid rgba(20,18,16,0.08);">
+    <a href="#top" style="font-family:'Newsreader',serif; font-size:22px; letter-spacing:-0.01em; color:#141210; text-decoration:none; display:flex; align-items:baseline; gap:8px;">
+      <span style="display:inline-block; width:9px; height:9px; border-radius:50%; background:#E11157;"></span>
+      {{ studioName }}
+    </a>
+    <nav style="display:flex; align-items:center; gap:clamp(16px,2.4vw,34px); font-size:14px; letter-spacing:0.01em;">
+      <a href="#services" style="color:#141210; text-decoration:none; opacity:0.72; transition:opacity 200ms ease;" style-hover="{{ navHover }}">Services</a>
+      <a href="#projets" style="color:#141210; text-decoration:none; opacity:0.72; transition:opacity 200ms ease;" style-hover="{{ navHover }}">Projets</a>
+      <a href="#apropos" style="color:#141210; text-decoration:none; opacity:0.72; transition:opacity 200ms ease;" style-hover="{{ navHover }}">À propos</a>
+      <a href="#contact" style="display:inline-flex; align-items:center; gap:8px; color:#141210; text-decoration:none; border:1px solid rgba(20,18,16,0.25); border-radius:100px; padding:8px 18px; font-weight:500; transition:all 200ms ease;" style-hover="{{ contactHover }}">Contact</a>
+    </nav>
+  </header>
+
+  <a id="top"></a>
+
+  <!-- HERO -->
+  
+
+  <!-- Marquee strip -->
+  <section style="min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:clamp(48px,8vh,96px) clamp(20px,5vw,64px);">
+    <p data-reveal="" style="margin:0 0 clamp(24px,5vh,48px); font-size:13px; letter-spacing:0.18em; text-transform:uppercase; opacity:0.55; font-weight:700;">GRAPHISTE DIPLÔMÉ D'ÉTAT · 2026</p>
+    <h1 data-reveal="" style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(46px,9vw,132px); line-height:0.98; letter-spacing:-0.02em; margin:0; max-width:14ch;">
+      Direction artistique &amp; <em style="font-style:italic; color:#E11157;">identités</em> qui <span style="white-space:nowrap;">restent en mémoire.</span>
+    </h1>
+    <div data-reveal="" style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:32px; margin-top:clamp(36px,6vh,64px);">
+      <p style="margin: 0; max-width: 44ch; font-size: clamp(16px,1.4vw,19px); line-height: 1.5; opacity: 0.78; height: 99px; width: 700px">
+        Je suis {{ designerName }}, graphiste et directeur artistique. J'aide les marques exigeantes à trouver une voix visuelle claire, singulière et durable.
+      </p>
+      <a href="#contact" style="flex-shrink:0; display:inline-flex; align-items:center; gap:12px; background:#141210; color:#F7F6F3; text-decoration:none; padding:16px 30px; border-radius:100px; font-weight:500; font-size:15px; transition:all 200ms ease;" style-hover="{{ ctaHover }}">
+        Travaillons ensemble
+        <span style="font-size:17px;">→</span>
+      </a>
+    </div>
+  </section><div style="border-block:1px solid rgba(20,18,16,0.12); padding:16px clamp(20px,5vw,64px); display:flex; flex-wrap:wrap; gap:10px 28px; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; opacity:0.6;">
+    <span>Identité de marque</span><span style="color:#E11157;">✦</span>
+    <span>Direction artistique</span><span style="color:#E11157;">✦</span>
+    <span>Packaging</span><span style="color:#E11157;">✦</span>
+    <span>Édition</span><span style="color:#E11157;">✦</span>
+    <span>Stratégie de marque</span>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" style="padding:clamp(64px,12vh,128px) clamp(20px,5vw,64px); background:#141210; color:#F7F6F3;">
+    <div data-reveal="" style="display:flex; align-items:baseline; gap:16px; margin-bottom:clamp(36px,6vh,64px);">
+      <span style="font-family:'Newsreader',serif; font-style:italic; font-size:19px; opacity:0.5;">01</span>
+      <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(28px,4vw,46px); letter-spacing:-0.01em; margin:0;">Ce que je fais</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr; gap:1px; background:rgba(247,246,243,0.16); border:1px solid rgba(247,246,243,0.16);" data-services-grid="">
+      <sc-for list="{{ services }}" as="svc" hint-placeholder-count="3">
+        <article data-reveal="" style="background:#141210; padding:clamp(28px,4vw,44px); display:flex; flex-direction:column; gap:16px; transition:background 200ms ease;" style-hover="{{ svcHover }}">
+          <span style="font-family:'Newsreader',serif; font-style:italic; font-size:15px; color:#E11157;">{{ svc.no }}</span>
+          <h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(22px,2.4vw,28px); margin:0; letter-spacing:-0.01em;">{{ svc.title }}</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; opacity:0.72;">{{ svc.body }}</p>
+          <ul style="list-style:none; margin:8px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:8px;">
+            <sc-for list="{{ svc.tags }}" as="tag" hint-placeholder-count="3">
+              <li style="font-size:12px; letter-spacing:0.04em; border:1px solid rgba(247,246,243,0.3); border-radius:100px; padding:5px 12px; opacity:0.75;">{{ tag }}</li>
+            </sc-for>
+          </ul>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projets" style="padding:clamp(48px,9vh,96px) clamp(20px,5vw,64px) clamp(64px,12vh,128px);">
+    <div data-reveal="" style="display:flex; align-items:baseline; gap:16px; margin-bottom:clamp(36px,6vh,64px); flex-wrap:wrap;">
+      <span style="font-family:'Newsreader',serif; font-style:italic; font-size:19px; opacity:0.5;">02</span>
+      <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(28px,4vw,46px); letter-spacing:-0.01em; margin:0;">Projets sélectionnés</h2>
+      <span style="margin-left:auto; font-size:13px; letter-spacing:0.04em; opacity:0.5;">2023 — 2026</span>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr; gap:clamp(28px,4vw,56px);" data-projects-grid="">
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+        <article data-reveal="" style="display:flex; flex-direction:column; gap:18px;" data-project-card="">
+          <a href="{{ p.href }}" style="display:flex; flex-direction:column; gap:18px; text-decoration:none; color:inherit; cursor:pointer;">
+            <div style="overflow:hidden; border-radius:6px; background:#ECEAE4; aspect-ratio:4/3;">
+              <div role="img" aria-label="{{ p.title }}" style="{{ p.imgStyle }}" data-project-img=""></div>
+            </div>
+            <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px;">
+              <h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(24px,2.8vw,34px); margin:0; letter-spacing:-0.01em;">{{ p.title }}</h3>
+              <span style="font-size:13px; letter-spacing:0.04em; opacity:0.5; white-space:nowrap;">{{ p.year }}</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; font-size:13px; letter-spacing:0.03em;">
+              <span style="color:#E11157;">{{ p.discipline }}</span>
+              <span style="opacity:0.3;">·</span>
+              <span style="opacity:0.6;">{{ p.client }}</span>
+            </div>
+            <p style="margin:0; font-size:15px; line-height:1.6; opacity:0.72; max-width:52ch;">{{ p.desc }}</p>
+          </a>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="apropos" style="background:#141210; color:#F7F6F3; padding:clamp(64px,12vh,128px) clamp(20px,5vw,64px);">
+    <div style="display:grid; grid-template-columns:1fr; gap:clamp(40px,6vw,72px); align-items:center;" data-about-grid="">
+      <div data-reveal="" style="display:flex; justify-content:center;">
+        <div style="width:min(72vw,320px); aspect-ratio:1; border-radius:50%; overflow:hidden; border:1px solid rgba(247,246,243,0.15);">
+          <img src="assets/portrait.png" alt="Portrait" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+      </div>
+      <div data-reveal="">
+        <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:28px;">
+          <span style="font-family:'Newsreader',serif; font-style:italic; font-size:19px; opacity:0.5;">03</span>
+          <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(28px,4vw,46px); letter-spacing:-0.01em; margin:0;">À propos</h2>
+        </div>
+        <p style="font-family:'Newsreader',serif; font-weight:300; font-size:clamp(20px,2.4vw,30px); line-height:1.4; margin:0 0 24px; max-width:36ch;">
+          Douze ans à façonner des marques, de la start-up culturelle à la maison de luxe.
+        </p>
+        <p style="font-size: 15px; line-height: 1.7; opacity: 0.72; max-width: 56ch; margin: 0 0 18px; width: 466px; height: 82px">
+          Formé aux Arts Décoratifs, j'ai dirigé le studio graphique d'une agence avant de passer indépendant. Mon travail cherche l'équilibre : une idée forte, une typographie juste, et rien de superflu.
+        </p>
+        <p style="font-size: 15px; line-height: 1.7; opacity: 0.72; max-width: 56ch; margin: 0; width: 397px; height: 56px">
+          Je collabore avec des équipes qui croient qu'une identité n'est pas un logo, mais un système vivant.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,56px); margin-top:40px;">
+          <div><div style="font-family:'Newsreader',serif; font-size:38px;">12+</div><div style="font-size:13px; opacity:0.6;">ans d'expérience</div></div>
+          <div><div style="font-family:'Newsreader',serif; font-size:38px;">40+</div><div style="font-size:13px; opacity:0.6;">marques accompagnées</div></div>
+          <div><div style="font-family:'Newsreader',serif; font-size:38px;">6</div><div style="font-size:13px; opacity:0.6;">récompenses design</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="padding:clamp(64px,12vh,128px) clamp(20px,5vw,64px);">
+    <div data-reveal="" style="display:flex; align-items:baseline; gap:16px; margin-bottom:clamp(36px,6vh,64px);">
+      <span style="font-family:'Newsreader',serif; font-style:italic; font-size:19px; opacity:0.5;">04</span>
+      <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(28px,4vw,46px); letter-spacing:-0.01em; margin:0;">Ce qu'ils en disent</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr; gap:1px; background:rgba(20,18,16,0.12); border:1px solid rgba(20,18,16,0.12);" data-testimonials-grid="">
+      <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+        <figure data-reveal="" style="background:#F7F6F3; margin:0; padding:clamp(28px,4vw,44px); display:flex; flex-direction:column; gap:22px;">
+          <span style="font-family:'Newsreader',serif; font-style:italic; font-size:44px; line-height:0.5; color:#E11157;">“</span>
+          <blockquote style="margin:0; font-family:'Newsreader',serif; font-weight:300; font-size:clamp(18px,2vw,22px); line-height:1.45;">{{ t.quote }}</blockquote>
+          <figcaption style="margin-top:auto; font-size:13px; letter-spacing:0.02em;">
+            <div style="font-weight:600;">{{ t.name }}</div>
+            <div style="opacity:0.6;">{{ t.role }}</div>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer id="contact" style="background:#141210; color:#F7F6F3; padding:clamp(64px,12vh,128px) clamp(20px,5vw,64px) 44px;">
+    <div style="max-width:1400px;">
+      <p data-reveal="" style="margin:0 0 clamp(24px,4vh,40px); font-size:13px; letter-spacing:0.18em; text-transform:uppercase; opacity:0.5;">Disponible pour de nouveaux projets — 2026</p>
+      <a data-reveal="" href="mailto:benjamincatteau@proton.me" style="display:inline-block; font-family:'Newsreader',serif; font-weight:300; font-size:clamp(28px,5.5vw,64px); line-height:1.02; letter-spacing:-0.02em; color:#F7F6F3; text-decoration:none; transition:color 200ms ease;" style-hover="{{ mailHover }}">
+        benjamincatteau@proton.me <span style="color:#E11157;">↗</span>
+      </a>
+      <div style="display:flex; flex-wrap:wrap; gap:32px; justify-content:space-between; align-items:flex-end; margin-top:clamp(56px,10vh,96px); padding-top:32px; border-top:1px solid rgba(247,246,243,0.15);">
+        <div style="font-family:'Newsreader',serif; font-size:20px; display:flex; align-items:baseline; gap:8px;">
+          <span style="display:inline-block; width:9px; height:9px; border-radius:50%; background:#E11157;"></span>
+          {{ studioName }}
+        </div>
+        <nav style="display:flex; flex-wrap:wrap; gap:24px; font-size:14px;">
+          <a href="#" style="color:#F7F6F3; text-decoration:none; opacity:0.7; transition:opacity 200ms ease;" style-hover="{{ socialHover }}">Instagram</a>
+          <a href="#" style="color:#F7F6F3; text-decoration:none; opacity:0.7; transition:opacity 200ms ease;" style-hover="{{ socialHover }}">Behance</a>
+          <a href="#" style="color:#F7F6F3; text-decoration:none; opacity:0.7; transition:opacity 200ms ease;" style-hover="{{ socialHover }}">LinkedIn</a>
+          <a href="#" style="color:#F7F6F3; text-decoration:none; opacity:0.7; transition:opacity 200ms ease;" style-hover="{{ socialHover }}">Dribbble</a>
+        </nav>
+        <div style="font-size:13px; opacity:0.5;">© 2026 — Angoulême (FR)</div>
+      </div>
+    </div>
+  </footer>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;studioName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Benjamin Catteau&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;designerName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Benjamin Catteau&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const navHover = { opacity: 1 };
+    const contactHover = { background: '#141210', color: '#F7F6F3', borderColor: '#141210' };
+    const ctaHover = { background: '#E11157', color: '#fff' };
+    const svcHover = { background: '#1E1B17' };
+    const mailHover = { color: '#E11157' };
+    const socialHover = { opacity: 1 };
+
+    const services = [
+      { no: '01', title: 'Identité de marque', body: "Logotype, système typographique, palette et charte : une fondation cohérente qui tient sur tous les supports, du papier à l'écran.", tags: ['Logotype', 'Charte', 'Naming'] },
+      { no: '02', title: 'Direction artistique', body: "Univers visuel, direction photo et mise en page. Je donne un ton et un rythme à votre communication, campagne après campagne.", tags: ['Art direction', 'Campagne', 'Édition'] },
+      { no: '03', title: 'Packaging & signalétique', body: "Du packaging imprimé à la signalétique de chantier ou d'espace, je fais vivre l'identité en volume : objets, étiquettes, enseignes et grands formats qui portent la marque dans le réel.", tags: ['Packaging', 'Signalétique', 'Grand format'] }
+    ];
+
+    const imgStyle = (src) => ({ width: '100%', height: '100%', backgroundImage: `url(${src})`, backgroundSize: 'cover', backgroundPosition: 'center', transition: 'transform 400ms cubic-bezier(0.2,0.7,0.2,1)' });
+    const projects = [
+      { title: 'A. B. Natoli', client: 'A. B. Natoli Lawyers', year: '2024', discipline: 'Identité de marque', img: 'assets/natoli/cover-poster.webp', href: 'A. B. Natoli.dc.html',
+        desc: "Refonte de l'identité d'un cabinet d'avocats de Kew fondé en 1949. Monogramme gravé, vert profond et rose poudré, illustration au trait de la devanture d'origine : une image qui relie l'héritage familial à une pratique contemporaine du droit." },
+      { title: 'Stemcon', client: 'Stemcon Construction', year: '2024', discipline: 'Identité de marque', img: 'assets/stemcon/cover-portrait.webp', href: 'Stemcon Construction.dc.html',
+        desc: "Identité d'un constructeur qui livre à l'échelle depuis 2008. Monogramme charpenté, base indigo et béton relevée d'un orange haute visibilité, signalétique de chantier et livrée : une marque robuste qui bâtit l'avenir." },
+      { title: 'Fébrile', client: 'Café Fébrile', year: '2025', discipline: 'Packaging', img: 'assets/project-03.png',
+        desc: "Identité et packaging d'un torréfacteur de spécialité. Chaque origine reçoit sa couleur et son motif tramé, sur un sachet kraft recyclé, pour raconter le voyage du grain de la parcelle à la tasse." },
+      { title: 'Halo', client: 'Halo Cosmétiques', year: '2024', discipline: 'Branding', img: 'assets/project-04.png',
+        desc: "Création de marque pour une gamme de soins minimalistes. Un symbole lumineux, des flacons épurés et un langage sensoriel qui rassure : peu de mots, beaucoup d'air, une promesse de pureté assumée." },
+      { title: 'Contretemps', client: 'Festival Contretemps', year: '2023', discipline: 'Affiche & signalétique', img: 'assets/project-05.png',
+        desc: "Identité d'un festival de musiques actuelles. Affiche typographique vibrante, signalétique lisible de loin et déclinaison réseaux sociaux, pour orienter le public et donner de la voix à chaque édition." },
+      { title: 'Silo', client: 'Silo Architecture', year: '2025', discipline: 'Identité & site web', img: 'assets/project-06.png',
+        desc: "Identité et site vitrine d'un studio d'architecture. Grille rigoureuse, monochrome habité et photographie mise en avant : un écrin sobre qui laisse les bâtiments parler d'eux-mêmes, sans jamais crier." }
+    ];
+
+    const testimonials = [
+      { quote: "Il a compris notre histoire mieux que nous. Le résultat est net, singulier, et il tient dans le temps.", name: 'Marco Natoli', role: 'Associé · A. B. Natoli Lawyers' },
+      { quote: "Un vrai sens du détail et une écoute rare. Chaque livrable était pensé, argumenté, impeccable.", name: 'David Stein', role: 'Directeur · Stemcon Construction' },
+      { quote: "Professionnel, rapide et créatif. Notre identité a enfin l'élégance qu'on cherchait depuis des années.", name: 'Nadia Benali', role: 'CEO · Halo Cosmétiques' }
+    ];
+
+    return {
+      studioName: this.props.studioName ?? 'Benjamin Catteau',
+      designerName: this.props.designerName ?? 'Benjamin Catteau',
+      navHover, contactHover, ctaHover, svcHover, mailHover, socialHover,
+      services, testimonials,
+      projects: projects.map(p => ({ ...p, href: p.href || '#projets', imgStyle: imgStyle(p.img) }))
+    };
+  }
+
+  componentDidMount() {
+    const root = this.el || document;
+    const layout = () => {
+      const wide = window.innerWidth >= 900;
+      const set = (sel, cols) => { const g = root.querySelector(sel); if (g) g.style.gridTemplateColumns = cols; };
+      set('[data-services-grid]', wide ? 'repeat(3,1fr)' : '1fr');
+      set('[data-projects-grid]', wide ? 'repeat(2,1fr)' : '1fr');
+      set('[data-testimonials-grid]', wide ? 'repeat(3,1fr)' : '1fr');
+      const about = root.querySelector('[data-about-grid]');
+      if (about) about.style.gridTemplateColumns = wide ? '300px 1fr' : '1fr';
+    };
+    layout();
+    this._layout = layout;
+    window.addEventListener('resize', layout);
+
+    // Reveal is handled by pure CSS scroll-driven animation (see helmet <style>).
+
+    // Project image hover zoom
+    root.querySelectorAll('[data-project-card]').forEach(card => {
+      const img = card.querySelector('[data-project-img]');
+      if (!img) return;
+      card.addEventListener('mouseenter', () => { img.style.transform = 'scale(1.04)'; });
+      card.addEventListener('mouseleave', () => { img.style.transform = 'scale(1)'; });
+    });
+  }
+
+  componentWillUnmount() {
+    if (this._layout) window.removeEventListener('resize', this._layout);
+  }
+}
+</script>
+</body>
+</html>

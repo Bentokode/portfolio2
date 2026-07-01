@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#EFEDE7; }
+  ::selection { background:#2C2A63; color:#EFEDE7; }
+  img { display:block; max-width:100%; }
+  @keyframes revealIn { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:none; } }
+  [data-reveal] { animation: revealIn both linear; animation-timeline: view(); animation-range: entry 2% cover 16%; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } [data-reveal]{ animation:none; } }
+</style>
+</helmet>
+<main style="font-family:'Archivo',system-ui,sans-serif; background:#EFEDE7; color:#1C1B29; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <!-- NAV -->
+  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:18px clamp(20px,5vw,64px); background:rgba(239,237,231,0.86); backdrop-filter:blur(10px); border-bottom:1px solid rgba(44,42,99,0.16);">
+    <a href="Portfolio.dc.html" style="display:inline-flex; align-items:center; gap:10px; color:#2C2A63; text-decoration:none; font-size:14px; transition:opacity 200ms ease;" style-hover="{{ dim }}">
+      <span style="font-size:16px;">←</span> Retour au portfolio
+    </a>
+    <span style="font-family:'Newsreader',serif; font-style:italic; font-size:16px; color:#2C2A63; opacity:0.8;">Étude de cas · 02</span>
+  </header>
+
+  <!-- HERO -->
+  <section style="padding:clamp(52px,9vh,104px) clamp(20px,5vw,64px) clamp(40px,6vh,72px);">
+    <div style="max-width:1240px; margin:0 auto;">
+      <p data-reveal style="margin:0 0 clamp(24px,4vh,44px); font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#2C2A63; opacity:0.65;">Identité de marque · 2024</p>
+      <h1 data-reveal style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(52px,12vw,164px); line-height:0.9; letter-spacing:-0.02em; margin:0; color:#2C2A63;">Stemcon</h1>
+      <div data-reveal style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:28px; margin-top:clamp(24px,4vh,40px);">
+        <p style="margin:0; font-family:'Newsreader',serif; font-style:italic; font-weight:300; font-size:clamp(19px,2.2vw,26px); color:#1C1B29; opacity:0.85;">Construction &amp; précast — Melbourne</p>
+        <p style="margin:0; max-width:48ch; font-size:clamp(15px,1.3vw,17px); line-height:1.6; opacity:0.78;">Identité d'un constructeur qui livre à l'échelle depuis 2008. Un monogramme charpenté, une base indigo et béton, et un accent haute visibilité : une marque qui « bâtit l'avenir » avec la solidité de son métier.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL-BLEED COVER -->
+  <section data-reveal style="padding:0 clamp(20px,5vw,64px);">
+    <figure style="margin:0; max-width:1400px; margin-inline:auto;">
+      <img src="assets/stemcon/cover-landscape.webp" alt="Système de marque Stemcon — monogramme &amp; couverture" style="width:100%; height:auto; border-radius:4px;">
+    </figure>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section style="padding:clamp(56px,9vh,104px) clamp(20px,5vw,64px);">
+    <div style="max-width:1240px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:clamp(36px,6vw,80px);">
+      <div data-reveal>
+        <span style="font-family:'Newsreader',serif; font-style:italic; font-size:17px; color:#EF5A24;">Le projet</span>
+        <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(26px,3.4vw,42px); line-height:1.14; letter-spacing:-0.01em; margin:14px 0 0; max-width:16ch;">Bâtir une marque à la hauteur de l'ouvrage.</h2>
+      </div>
+      <div data-reveal style="display:flex; flex-direction:column; gap:26px;">
+        <p style="margin:0; font-size:clamp(15px,1.3vw,18px); line-height:1.65; opacity:0.82;">Stemcon construit à l'échelle pour les grands promoteurs de Melbourne. Nous avons conçu un système visuel robuste, décliné du terrain au document : un monogramme découpé dans la matière, une palette indigo profond &amp; béton relevée d'un orange haute visibilité, et une typographie qui allie un titrage à empattements à une linéale technique. Une image qui inspire la confiance sur laquelle repose chaque chantier.</p>
+        <dl style="margin:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:22px 28px;">
+          <div><dt style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; opacity:0.5; margin-bottom:6px;">Client</dt><dd style="margin:0; font-size:15px;">Stemcon Construction</dd></div>
+          <div><dt style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; opacity:0.5; margin-bottom:6px;">Année</dt><dd style="margin:0; font-size:15px;">2024</dd></div>
+          <div><dt style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; opacity:0.5; margin-bottom:6px;">Rôle</dt><dd style="margin:0; font-size:15px;">Direction artistique, identité</dd></div>
+          <div><dt style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; opacity:0.5; margin-bottom:6px;">Livrables</dt><dd style="margin:0; font-size:15px;">Logo &amp; monogramme, signalétique, livrée, EPI, éditions</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 LA MARQUE (concrete grey block) -->
+  <section style="background:#B7B5B0; padding:clamp(56px,9vh,104px) clamp(20px,5vw,64px);">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div data-reveal style="display:flex; align-items:baseline; gap:14px; margin-bottom:clamp(34px,5vh,56px); flex-wrap:wrap;">
+        <span style="font-family:'Newsreader',serif; font-style:italic; font-size:17px; color:#2C2A63;">01</span>
+        <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(26px,3.4vw,42px); margin:0; letter-spacing:-0.01em; color:#1C1B29;">La marque</h2>
+        <p style="margin-left:auto; margin-block:0; font-size:14px; color:#2C2A63; opacity:0.85; max-width:36ch;">Un monogramme découpé — quatre modules qui s'emboîtent comme une structure.</p>
+      </div>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(18px,2.4vw,28px); align-items:start;">
+        <figure style="margin:0;">
+          <img src="assets/stemcon/cover-portrait.webp" alt="Capability Statement — couverture" style="width:100%; height:auto; border-radius:4px;">
+          <figcaption style="margin:14px 0 0; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#2C2A63; opacity:0.75;">Capability Statement — couverture</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="assets/stemcon/vehicle.webp" alt="Livrée de véhicule Stemcon" style="width:100%; height:auto; border-radius:4px;">
+          <figcaption style="margin:14px 0 0; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#2C2A63; opacity:0.75;">Livrée de véhicule</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="assets/stemcon/helmet-team.webp" alt="Casque de chantier &amp; équipe" style="width:100%; height:auto; border-radius:4px;">
+          <figcaption style="margin:14px 0 0; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#2C2A63; opacity:0.75;">EPI casque &amp; équipe sur site</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 SIGNALÉTIQUE (deep indigo block) -->
+  <section style="background:#2C2A63; color:#EFEDE7; padding:clamp(56px,9vh,104px) clamp(20px,5vw,64px);">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div data-reveal style="display:flex; align-items:baseline; gap:14px; margin-bottom:clamp(34px,5vh,56px);">
+        <span style="font-family:'Newsreader',serif; font-style:italic; font-size:17px; color:#EF5A24;">02</span>
+        <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(26px,3.4vw,42px); margin:0; letter-spacing:-0.01em;">Signalétique de chantier</h2>
+      </div>
+      <figure data-reveal style="margin:0 0 clamp(20px,3vw,32px);">
+        <img src="assets/stemcon/hoarding-wide.webp" alt="Palissade de chantier — We build futures" style="width:100%; height:auto; border-radius:4px;">
+        <figcaption style="margin:14px 0 0; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; opacity:0.6;">Palissade de chantier — « We build futures »</figcaption>
+      </figure>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(18px,2.4vw,28px); align-items:start;">
+        <figure style="margin:0;">
+          <img src="assets/stemcon/hoarding-corner.webp" alt="Palissade — angle de rue" style="width:100%; height:auto; border-radius:4px;">
+          <figcaption style="margin:14px 0 0; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; opacity:0.6;">Angle de rue — motif &amp; grands aplats</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="assets/stemcon/crane-vest.webp" alt="Grue signée &amp; gilet haute visibilité" style="width:100%; height:auto; border-radius:4px;">
+          <figcaption style="margin:14px 0 0; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; opacity:0.6;">Grue signée &amp; gilet haute visibilité</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENVIRONMENTAL QUOTE BAND -->
+  <section data-reveal style="padding:0;">
+    <figure style="margin:0;">
+      <img src="assets/stemcon/quote-shadow.webp" alt="« We're not just focused on the here and now… »" style="width:100%; height:auto;">
+    </figure>
+  </section>
+
+  <!-- 03 L'APPROCHE (darkest indigo block) -->
+  <section style="background:#22204B; color:#EFEDE7; padding:clamp(56px,9vh,104px) clamp(20px,5vw,64px);">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div data-reveal style="display:flex; align-items:baseline; gap:14px; margin-bottom:clamp(34px,5vh,56px);">
+        <span style="font-family:'Newsreader',serif; font-style:italic; font-size:17px; color:#EF5A24;">03</span>
+        <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(26px,3.4vw,42px); margin:0; letter-spacing:-0.01em;">L'approche éditoriale</h2>
+        <p style="margin-left:auto; margin-block:0; font-size:14px; opacity:0.7; max-width:34ch;">Un Capability Statement où le duotone indigo fait respirer la photographie.</p>
+      </div>
+      <figure data-reveal style="margin:0 0 clamp(20px,3vw,32px);">
+        <img src="assets/stemcon/approach.webp" alt="Double page — Approach" style="width:100%; height:auto; border-radius:4px;">
+        <figcaption style="margin:14px 0 0; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; opacity:0.6;">Double page — « Approach »</figcaption>
+      </figure>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(18px,2.4vw,28px); align-items:start;">
+        <figure style="margin:0;">
+          <img src="assets/stemcon/built-generations.webp" alt="Double page — Built for generations" style="width:100%; height:auto; border-radius:4px;">
+          <figcaption style="margin:14px 0 0; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; opacity:0.6;">« Built for generations »</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="assets/stemcon/belief.webp" alt="Double page — We believe in building a better future" style="width:100%; height:auto; border-radius:4px;">
+          <figcaption style="margin:14px 0 0; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; opacity:0.6;">« A better future »</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 SUR LE TERRAIN (paper block, orange accents) -->
+  <section style="background:#EFEDE7; padding:clamp(56px,9vh,104px) clamp(20px,5vw,64px);">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div data-reveal style="display:flex; align-items:baseline; gap:14px; margin-bottom:clamp(34px,5vh,56px);">
+        <span style="font-family:'Newsreader',serif; font-style:italic; font-size:17px; color:#EF5A24;">04</span>
+        <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(26px,3.4vw,42px); margin:0; letter-spacing:-0.01em;">Sur le terrain</h2>
+      </div>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(18px,2.4vw,28px); align-items:start; margin-bottom:clamp(18px,2.4vw,28px);">
+        <figure style="margin:0;">
+          <img src="assets/stemcon/team-experience.webp" alt="Double page — équipe de direction" style="width:100%; height:auto; border-radius:4px; border:1px solid rgba(28,27,41,0.1);">
+          <figcaption style="margin:14px 0 0; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#2C2A63; opacity:0.7;">« Delivered with experience » — l'équipe</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="assets/stemcon/precast.webp" alt="Atelier de préfabrication béton" style="width:100%; height:auto; border-radius:4px;">
+          <figcaption style="margin:14px 0 0; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#2C2A63; opacity:0.7;">Atelier de préfabrication béton</figcaption>
+        </figure>
+      </div>
+      <blockquote data-reveal style="margin:clamp(24px,4vh,44px) 0 0; border-left:3px solid #EF5A24; padding-left:24px;">
+        <p style="font-family:'Newsreader',serif; font-weight:300; font-size:clamp(24px,3.4vw,44px); line-height:1.2; margin:0; color:#2C2A63; max-width:24ch;">« We bring an artisan skillset, strength and reliability. »</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- NEXT -->
+  <footer style="padding:clamp(48px,8vh,90px) clamp(20px,5vw,64px);">
+    <div style="max-width:1240px; margin:0 auto; display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+      <a href="Portfolio.dc.html" style="display:inline-flex; align-items:center; gap:10px; color:#2C2A63; text-decoration:none; font-size:14px; transition:opacity 200ms ease;" style-hover="{{ dim }}"><span>←</span> Tous les projets</a>
+      <a href="A. B. Natoli.dc.html" style="display:inline-flex; align-items:baseline; gap:14px; color:#2C2A63; text-decoration:none; transition:opacity 200ms ease;" style-hover="{{ dim }}">
+        <span style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; opacity:0.55;">Projet suivant</span>
+        <span style="font-family:'Newsreader',serif; font-style:italic; font-size:clamp(22px,3vw,34px);">A. B. Natoli →</span>
+      </a>
+    </div>
+  </footer>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { dim: { opacity: 0.55 } };
+  }
+}
+</script>
+</body>
+</html>
